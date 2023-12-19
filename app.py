@@ -73,7 +73,7 @@ def send_email(
         content = (
             f"Hello {user_first_name} {user_last_name},\n"
             f"Your submission for Assignment {assignment_name} has been successfully uploaded.\n"
-            f"Your submission details are as follows:\n"  
+            "Your submission details are as follows:\n"  
             f"- Assignment Name: {assignment_name}\n"
             f"- File Name: {file_name}\n"
             f"- Submission Attempt: {submission_count}/{total_attempts}\n"
@@ -88,14 +88,14 @@ def send_email(
             f"There was an issue with your submission for Assignment - {assignment_name}.\n\n"
             "The following issue was encountered:\n"
             f"- {failure_reason}\n\n"
-            f"Your submission details are as follows:\n"
+            "Your submission details are as follows:\n"
             f"- Assignment Name: {assignment_name}\n"
             f"- File Name: {file_name}\n"
             f"- Submission Attempt: {submission_count}/{total_attempts}\n"
             f"- Submission URL: {submission_url}\n\n"
-            f"To successfully submit your assignment, please ensure that:\n"
-            f"- The file is in the correct format (.zip).\n"
-            f"- The submission is made before the due date."
+            "To successfully submit your assignment, please ensure that:\n"
+            "- The file is in the correct format (.zip).\n"
+            "- The submission is made before the due date."
         )
 
     message = Mail(
