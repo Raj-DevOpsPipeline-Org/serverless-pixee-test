@@ -6,12 +6,12 @@ import zipfile
 from io import BytesIO
 
 import boto3
-import requests
 from dotenv import load_dotenv
 from google.cloud import storage
 from google.oauth2 import service_account
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+from security import safe_requests
 
 # Initialize logging
 logger = logging.getLogger()
@@ -127,7 +127,7 @@ def lambda_handler(event, context):
     assignment_name = message["assignment_name"]
 
     try:
-        response = requests.get(submission_url)
+        response = safe_requests.get(submission_url)
         file_name = os.path.basename(submission_url)
         file = BytesIO(response.content)
         file_url = ""
